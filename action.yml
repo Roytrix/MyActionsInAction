@@ -1,16 +1,17 @@
-name: "Roytrix'x Action in action"
-description: "Greet someone and return always 42."
-author: "Roytrix"
+name: "My Container Action"
+description: "A custom action that returns the answer to everything"
+author: "Your Name"
+
 inputs:
-  who-to-greet: # id of input
-    description: 'who to greet'
+  who-to-greet:
+    description: "Who to greet"
     required: true
-    default: 'World'
+    default: "World"
+
 outputs:
-answer:
-  description: 'The answer to the ultimate question of life, the universe, and everything.'
-  runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args:
-      - ${{ inputs.who-to-greet }} 
+  answer:
+    description: "The answer to everything"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
