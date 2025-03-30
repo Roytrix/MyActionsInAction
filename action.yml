@@ -1,0 +1,16 @@
+name: "Roytrix'x Action in action"
+description: "Greet someone and return always 42."
+author: "Roytrix"
+inputs:
+  who-to-greet: # id of input
+    description: 'who to greet'
+    required: true
+    default: 'World'
+outputs:
+answer:
+  description: 'The answer to the ultimate question of life, the universe, and everything.'
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+      - ${{ inputs.who-to-greet }} 
